@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.cabecalho {
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  padding: 1rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.cabecalho .hero-image {
+  width: 200px;
+}
+.cabecalho .hero-image img {
+  width: 200px;
+  max-width: 100%;
+}
+.cabecalho .navbar .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  list-style: none;
+}
+.cabecalho .navbar .nav li .links {
+  color: #1f1f1f;
+  font-size: 1.1rem;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.cabecalho .navbar .nav li .links::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #007bff;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: right;
+}
+.cabecalho .navbar .nav li .links:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.cabecalho .navbar .nav li .links:hover {
+  color: #007bff;
+}
+.navbar-toggle {
+  display: none;
+
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+.sidebar-dropdown {
+  display: none;
+}
+
+/* Sidebar */
+@media (max-width: 1024px) {
+  .cabecalho {
+    padding: 1rem 3rem;
+  }
+  .sidebar-dropdown {
+    display: block;
+    position: fixed;
+    width: 100%;
+    padding: 1.5rem 4rem 0rem;
+    background-color: #007bff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-height: 0;
+    opacity: 0;
+    z-index: -2;
+    visibility: hidden;
+    transition: z-index 0.3s ease-in-out, opacity 0.3s ease-in-out,
+      max-height 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  .sidebar-dropdown.active {
+    opacity: 1;
+    max-height: 100%;
+    z-index: 2;
+    visibility: visible;
+  }
+  .sidebar .nav {
+    list-style: none;
+  }
+  .sidebar .nav li {
+    margin-bottom: 1.5rem;
+  }
+  .sidebar .nav li .links {
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  .navbar {
+    display: none;
+  }
+  .navbar-toggle {
+    display: flex;
+    align-items: center;
+  }
+  .navbar-toggle .toggle-menu,
+  .navbar-toggle .close-menu {
+    color: #007bff;
+    font-size: 35px;
+    cursor: pointer;
+  }
+  .navbar-toggle .close-menu {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .cabecalho {
+    padding: 1rem 2rem;
+  }
+}

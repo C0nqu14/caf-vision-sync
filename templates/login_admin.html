@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="CAF SYNC, Colégio Árvore da Felicidade,Sincronização, Feedback, Interação escola e alunos"
+    />
+    <meta
+      name="description"
+      content="CAF Sync é uma plataforma de feedback e avaliação escolar, projetada para conectar diretamente alunos e administradores, ajudando a criar um ambiente educacional mais colaborativo e adaptado às suas necessidades."
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static' , filename='img/icons/favicon.png') }}"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:ital,wdth,wght@0,75..100,800;1,75..100,800&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='styles/login_adm.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static' , filename='styles/style.css') }}" />
+    <title>CAF SYNC ADMIN: Iniciar Sessão</title>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="hero-image">
+        <a href="#">
+          <img src="{{ url_for('static' , filename='img/icons/logo.png') }}" alt="Logo da Plataforma" />
+        </a>
+      </div>
+      <nav class="navbar">
+        <ul class="nav">
+          <li>
+            <a id="inicio" class="links" href="/">Início</a>
+          </li>
+          <li>
+            <a id="login" class="links" href="/login">Entrar</a>
+          </li>
+          <li>
+            <a id="cadastro" class="links" href="/cadastro">Cadastra-se</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="navbar-toggle">
+        <span>
+          <ion-icon name="menu" class="toggle-menu"></ion-icon>
+          <ion-icon name="close" class="close-menu"></ion-icon>
+        </span>
+      </div>
+    </header>
+
+    <header class="sidebar-dropdown">
+      <nav class="sidebar">
+        <ul class="nav">
+          <li>
+            <a id="inicio" class="links" href="/">Início</a>
+          </li>
+          <li>
+            <a id="login" class="links" href="/login">Entrar</a>
+          </li>
+          <li>
+            <a id="cadastro" class="links" href="/cadastro"
+              >Cadastra-se</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="img">
+        <img src="{{ url_for('static' , filename='img/bg/dashboard.svg') }}" alt="dashboard-img" />
+      </div>
+      <div class="login-container">
+        <form action="/login_admin"  method="POST">
+          <img class="avatar" src="{{ url_for('static' , filename='img/bg/profile.svg') }}" alt="avatar-img" />
+          <h2>Bem-vindo!</h2>
+          <div class="input-div one">
+            <div class="i">
+              <ion-icon name="person"></ion-icon>
+            </div>
+            <div>
+              <h5>Nome de usuário</h5>
+              <input type="text" name="username" id="username" class="input" />
+            </div>
+          </div>
+          <div class="input-div two">
+            <div class="i">
+              <ion-icon name="key"></ion-icon>
+            </div>
+            <div>
+              <h5>Palavra-passe</h5>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="input"
+              />
+            </div>
+          </div>
+          <input type="submit" class="btn" value="login" />
+        </form>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static' , filename='js/login.js') }}"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </body>
+</html>

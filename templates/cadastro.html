@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="CAF SYNC, Colégio Árvore da Felicidade,Sincronização, Feedback, Interação escola e alunos"
+    />
+    <meta
+      name="description"
+      content="CAF Sync é uma plataforma de feedback e avaliação escolar, projetada para conectar diretamente alunos e administradores, ajudando a criar um ambiente educacional mais colaborativo e adaptado às suas necessidades."
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static' , filename='img/icons/favicon.png') }}"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:ital,wdth,wght@0,75..100,800;1,75..100,800&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='styles/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static' , filename='styles/register.css') }}">
+    <script src="{{ url_for('static' , filename='js/script.js') }}"></script>
+    <title>CAF SYNC: Cadastra-se</title>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="hero-image">
+        <a href="#">
+          <img src="{{ url_for('static' , filename='img/icons/logo.png') }}" alt="Logo da Plataforma" />
+        </a>
+      </div>
+      <nav class="navbar">
+        <ul class="nav">
+          <li>
+            <a id="inicio" class="links" href="/">Início</a>
+          </li>
+          <li>
+            <a id="login" class="links" href="/login">Entrar</a>
+          </li>
+          <li>
+            <a id="cadastro" class="links" href="/cadastro">Cadastra-se</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="navbar-toggle">
+        <span>
+          <ion-icon name="menu" class="toggle-menu"></ion-icon>
+          <ion-icon name="close" class="close-menu"></ion-icon>
+        </span>
+      </div>
+    </header>
+
+    <header class="sidebar-dropdown">
+      <nav class="sidebar">
+        <ul class="nav">
+          <li>
+            <a id="inicio" class="links" href="/">Início</a>
+          </li>
+          <li>
+            <a id="login" class="links" href="/login">Entrar</a>
+          </li>
+          <li>
+            <a id="cadastro" class="links" href="/cadastro">Cadastra-se</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="information-register">
+      <div id="information">
+        <div class="information-title">
+          <h1>Junte-se ao CAF SYNC</h1>
+        </div>
+        <div class="information-subtitle">
+          <h2>Sua voz é importante</h2>
+          <h2><span class="h2-enfase">juntos podemos</span> transformar</h2>
+          <h2>nosso ambiente escolar!</h2>
+        </div>
+        <div class="information-text">
+          <p>Já é membro ? Clique em Iniciar Sessão</p>
+          <div class="button-group">
+            <div class="button-links">
+              <a class="btn1" href="/login_admin">Mudar Método</a>
+            </div>
+            <div class="button-links">
+              <a class="btn2" href="/login">Iniciar Sessão</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="register">
+        <div id="register-top">
+          <div class="register-title">
+            <h1>Junte-se ao CAF SYNC</h1>
+          </div>
+          <div class="register-link">
+            <p>Já é membro ? <a href="/login">Iniciar Sessão</a></p>
+          </div>
+        </div>
+        <form class="hero-form" action="/cadastro" method="POST">
+          <div class="hero-input">
+            <label for="email">Email</label>
+            <div class="input-container">
+              <input
+                class="input-field"
+                type="email"
+                name="email"
+                id="email"
+                required
+              />
+              <div class="icon">
+                <ion-icon name="mail"></ion-icon>
+              </div>
+            </div>
+          </div>
+
+          <div class="two-input">
+            <div class="hero-input">
+              <label for="firstname">Nome</label>
+              <div class="input-container">
+                <input
+                  class="input-field"
+                  type="text"
+                  name="firstname"
+                  id="firstname"
+                  required
+                />
+                <div class="icon">
+                  <ion-icon name="person"></ion-icon>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-input">
+              <label for="lastname">Sobrenome</label>
+              <div class="input-container">
+                <input
+                  class="input-field"
+                  type="text"
+                  name="lastname"
+                  id="lastname"
+                  required
+                />
+                <div class="icon">
+                  <ion-icon name="person"></ion-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-input">
+            <label for="date">Data de Nascimento</label>
+            <div class="input-container">
+              <input
+                class="input-field"
+                type="date"
+                name="date"
+                id="date"
+                required
+              />
+              <div class="icon">
+                <ion-icon name="calendar"></ion-icon>
+              </div>
+            </div>
+          </div>
+
+          <div class="two-input">
+            <div class="hero-input">
+              <label for="gender">Gênero</label>
+              <div class="input-container">
+                <select class="input-field" name="gender" id="gender" required>
+                  <option value="" disabled selected hidden></option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Feminino">Feminino</option>
+                </select>
+                <div class="icon">
+                  <ion-icon name="man"></ion-icon>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-input">
+              <label for="clt">Nº / Turma</label>
+              <div class="input-container">
+                <select class="input-field" name="clt" id="clt" required>
+                  <option value="" disabled selected hidden></option>
+                  <option value="Masculino">10º / IB</option>
+                  <option value="Masculino">10º / ID</option>
+                  <option value="Masculino">11º / IB</option>
+                  <option value="Masculino">11º / ID</option>
+                  <option value="Masculino">12º / IB</option>
+                  <option value="Masculino">12º / ID</option>
+                </select>
+                <div class="icon">
+                  <ion-icon name="school"></ion-icon>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-input">
+            <label for="password">Palavra-passe</label>
+            <div class="input-container">
+              <input
+                class="input-field"
+                type="password"
+                name="password"
+                id="password"
+                required
+              />
+              <div class="icon">
+                <ion-icon name="key"></ion-icon>
+              </div>
+            </div>
+          </div>
+
+          <div class="submit-input">
+            <input class="btnSubmit" type="submit" value="Cadastrar" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </body>
+</html>

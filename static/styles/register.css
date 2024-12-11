@@ -1,0 +1,205 @@
+body {
+  background: rgba(31, 31, 31, 0.93)
+    url("../img/bg/collage-customer-experience-concept.jpg") no-repeat
+    center/cover fixed;
+  background-blend-mode: overlay;
+}
+
+/*Conectar-se a Plataforma*/
+#information-register {
+  display: flex;
+  padding: 10rem 4rem 1.5rem 4rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-family: "Roboto";
+}
+#information,
+#register {
+  color: #fff;
+}
+#information {
+  width: 60%;
+}
+#register {
+  width: 40%;
+}
+
+/*Informação de boas vindas!*/
+#information .information-title {
+  margin-bottom: 1rem;
+}
+#information .information-title h1,
+.register-title h1 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+#information .information-subtitle {
+  margin-bottom: 1rem;
+}
+#information .information-subtitle h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+#information .information-subtitle .h2-enfase {
+  color: #1b89ff;
+  text-shadow: 0px 0px 40px #ffffff96;
+  border: none;
+}
+#information .information-text p {
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+#information .information-text .button-group {
+  display: flex;
+  gap: 2rem;
+}
+#information .information-text .button-group .button-links a {
+  color: #fff;
+  font-size: 1rem;
+}
+#information .information-text .button-group .button-links .btn1 {
+  width: 50%;
+  border-radius: 0.5rem;
+  padding: 1rem 3rem;
+  background-color: #ffffff15;
+  transition: text-shadow ease-in-out 0.1s, box-shadow ease-in-out 0.1s;
+}
+#information .information-text .button-group .button-links .btn2 {
+  width: 50%;
+  border-radius: 0.5rem;
+  padding: 1rem 3rem;
+  background-color: #007bff;
+  transition: text-shadow ease-in-out 0.1s, box-shadow ease-in-out 0.1s;
+}
+.submit-input .btnSubmit:hover,
+#information .information-text .button-group .button-links .btn1:hover,
+#information .information-text .button-group .button-links .btn2:hover {
+  box-shadow: 0px 0px 10px #fff;
+  text-shadow: 0px 0px 4px #fff;
+}
+
+/*Formulário*/
+#register-top {
+  display: none;
+  margin-bottom: 2.5rem;
+}
+#register-top .register-title {
+  margin-bottom: 1rem;
+}
+#register-top .register-link p {
+  font-size: 1rem;
+}
+.register-link p a {
+  color: #007bff;
+}
+.hero-input {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1.5rem;
+  transition: border 0.2s ease-in-out;
+}
+.two-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.two-input .hero-input {
+  width: 50%;
+}
+.hero-input label {
+  display: block;
+  font-size: 0.8rem;
+  color: #ddd;
+  transition: color 0.2s ease-in-out;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.input-container .input-field {
+  width: 100%;
+  color: #ddd;
+  background: #1f1f1f00;
+  padding: 0.6rem 0.4rem;
+  outline: none;
+  border: none;
+}
+.input-container select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+select option {
+  color: #007bff;
+}
+input[type="date"] {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: transparent;
+  background: none;
+  display: none;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon ion-icon {
+  color: #ddd;
+  font-size: 18px;
+  transition: color 0.2s ease-in-out;
+}
+.hero-input:focus-within {
+  border-bottom: 1px solid #007bff;
+}
+.hero-input:focus-within label,
+.hero-input:focus-within .icon ion-icon {
+  color: #007bff;
+}
+.submit-input {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}
+.submit-input .btnSubmit {
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 3rem;
+  background-color: #007bff;
+  color: #fff;
+  transition: text-shadow ease-in-out 0.1s, box-shadow ease-in-out 0.1s;
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  #information-register {
+    display: flex;
+    padding: 3rem 3rem 1.5rem 3rem;
+    align-items: center;
+    justify-content: center;
+  }
+  #information {
+    display: none;
+  }
+  #register-top {
+    display: block;
+  }
+  #register {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  #information-register {
+    padding: 3rem 2rem 1.5rem 2rem;
+  }
+}

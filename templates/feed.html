@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="CAF SYNC, Colégio Árvore da Felicidade, Sincronização, Feedback, Interação escola e alunos"
+    />
+    <meta
+      name="description"
+      content="CAF Sync é uma plataforma de feedback e avaliação escolar, projetada para conectar diretamente alunos e administradores, ajudando a criar um ambiente educacional mais colaborativo e adaptado às suas necessidades."
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static' , filename='img/icons/favicon.png') }}"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:ital,wdth,wght@0,75..100,800;1,75..100,800&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='styles/feedback.css') }}" />
+    <script src="{{ url_for('static' , filename='js/script.js') }}"></script>
+    <title>CAF SYNC: Feedback</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="container-left">
+        <header class="header-icon">
+          <div class="icon-right">
+            <span class="icon" id="close_menu">
+              <ion-icon name="ios-list"></ion-icon>
+            </span>
+          </div>
+          <div class="icon-left">
+            <span class="icon" id="chat">
+              <ion-icon name="ios-create"></ion-icon>
+            </span>
+          </div>
+        </header>
+        <div class="feedback-list">
+          <div class="history-nav">
+            <a>
+              <span>Histórico de Feedback</span>
+            </a>
+          </div>
+          <div class="all-history" id="all-history">
+            {% for feedback in feedbacks %}
+              <div class="feedback-entry">
+                <h5 style="font-weight:bold;">{{ feedback.historico }}</h5>
+		<h5 style="font-weight:100;">{{ feedback.tema }}</h5>
+		<br>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <footer class="footer-icon">
+          <div class="footer-nav">
+            <a href="/feedback">
+              <span class="icon">
+                <ion-icon name="ios-keypad"></ion-icon>
+              </span>
+              <span>Explorar CAF SYNC</span>
+            </a>
+            <a href="/">
+              <span class="icon">
+                <ion-icon name="ios-notifications-outline"></ion-icon>
+              </span>
+              <span>Notificações</span>
+            </a>
+          </div>
+        </footer>
+      </div>
+
+      <div id="container-right">
+        <header class="menu-icon">
+          <div class="icon-right">
+            <span class="icon" id="open_menu">
+              <ion-icon name="ios-list"></ion-icon>
+            </span>
+          </div>
+          <div class="icon-left">
+            <span class="icon" id="menu">
+              <ion-icon name="ios-log-out"></ion-icon>
+            </span>
+          </div>
+        </header>
+        <div id="welcome-message">
+          <h2>{{ tema }}</h2> <!-- Exibir o tema -->
+        </div>
+        <main id="message-container"></main>
+        <form action="/feedback" method="POST">
+          <footer id="footer-input">
+            <div class="form">
+              <textarea
+                name="textarea"
+                id="textarea"
+                placeholder="Envie o seu feedback"
+              ></textarea>
+              <div class="send-form">
+                <div class="voice-form">
+                  <span class="sms-icon" id="mic-on">
+                    <ion-icon name="mic"></ion-icon>
+                  </span>
+                  <span class="sms-icon" id="mic-off">
+                    <ion-icon name="mic-off"></ion-icon>
+                  </span>
+                </div>
+                <div class="sms-form">
+                  <span class="sms-icon" id="send-sms">
+                    <button type="submit" id="send-sms">
+                      <ion-icon name="ios-send"></ion-icon>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </form>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static' , filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static' , filename='js/feedback.js') }}"></script>
+    <script src="{{ url_for('static' , filename='js/history.js') }}"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </body>
+</html>

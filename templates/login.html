@@ -1,50 +1,147 @@
 <!DOCTYPE html>
-<html lang="pt-pt">
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="CAF SYNC, Colégio Árvore da Felicidade,Sincronização, Feedback, Interação escola e alunos"
+    />
+    <meta
+      name="description"
+      content="CAF Sync é uma plataforma de feedback e avaliação escolar, projetada para conectar diretamente alunos e administradores, ajudando a criar um ambiente educacional mais colaborativo e adaptado às suas necessidades."
+    />
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static' , filename='img/icons/favicon.png') }}"
+      type="image/x-icon"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:ital,wdth,wght@0,75..100,800;1,75..100,800&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" href="../static/css/register.css" />
-    <script src="../static/js/animation.js"></script>
-    <title>CAF Vision Sync - Iniciar Sessão</title>
-</head>
-<body>
-    <div class="register">
-        <div class="register-top">
-            <hr />
-            <img src="../static/img/icons/people.png" alt="user-icon" />
-        </div>
-        <div class="register-bottom">
-            <form action="/login" method="post" id="login-form">
-                <div class="input-container">
-                    <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        class="input-field"
-                        required
-                    />
-                    <label for="email" class="floating-label">Email</label>
-                </div>
-                <div class="input-container">
-                    <input
-                        type="password"
-                        name="senha"
-                        id="senha"
-                        class="input-field"
-                        required
-                    />
-                    <label for="senha" class="floating-label">Senha</label>
-                </div>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='styles/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static' , filename='styles/register.css') }}">
+    <script src="{{ url_for('static' , filename='js/script.js') }}"></script>
+    <title>CAF SYNC: Iniciar Sessão</title>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="hero-image">
+        <a href="#">
+          <img src="{{ url_for('static' , filename='img/icons/logo.png') }}" alt="Logo da Plataforma" />
+        </a>
+      </div>
+      <nav class="navbar">
+        <ul class="nav">
+          <li>
+            <a id="inicio" class="links" href="/">Início</a>
+          </li>
+          <li>
+            <a id="login" class="links" href="/login">Entrar</a>
+          </li>
+          <li>
+            <a id="cadastro" class="links" href="/cadastro">Cadastra-se</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="navbar-toggle">
+        <span>
+          <ion-icon name="menu" class="toggle-menu"></ion-icon>
+          <ion-icon name="close" class="close-menu"></ion-icon>
+        </span>
+      </div>
+    </header>
 
-                <button type="submit" class="button">Iniciar Sessão</button>
-            </form>
+    <header class="sidebar-dropdown">
+      <nav class="sidebar">
+        <ul class="nav">
+          <li>
+            <a id="inicio" class="links" href="/">Início</a>
+          </li>
+          <li>
+            <a id="login" class="links" href="/login">Entrar</a>
+          </li>
+          <li>
+            <a id="cadastro" class="links" href="/cadastro">Cadastra-se</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="information-register">
+      <div id="information">
+        <div class="information-title">
+          <h1>Que bom tê-lo de volta!</h1>
         </div>
+        <div class="information-subtitle">
+          <h2>Entre e continue</h2>
+          <h2><span class="h2-enfase">transformando</span> nosso</h2>
+          <h2> ambiente escolar!</h2>
+        </div>
+        <div class="information-text">
+          <p>Não tem conta ? clique em cadastra-se</p>
+          <div class="button-group">
+            <div class="button-links">
+              <a class="btn1" href="/login_admin">Mudar Método</a>
+            </div>
+            <div class="button-links">
+              <a class="btn2" href="/cadastro">Cadastra-se</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="register">
+        <div id="register-top">
+          <div class="register-title">
+            <h1>Que bom tê-lo de volta!</h1>
+          </div>
+          <div class="register-link">
+            <p>Não tem uma conta ? <a href="/login">Cadastra-se</a></p>
+          </div>
+        </div>
+        <form class="hero-form" action="/login" method="POST">
+          <div class="hero-input">
+            <label for="email">Email</label>
+            <div class="input-container">
+              <input
+                class="input-field"
+                type="email"
+                name="email"
+                id="email"
+                required
+              />
+              <div class="icon">
+                <ion-icon name="mail"></ion-icon>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-input">
+            <label for="password">Palavra-passe</label>
+            <div class="input-container">
+              <input
+                class="input-field"
+                type="password"
+                name="password"
+                id="password"
+                required
+              />
+              <div class="icon">
+                <ion-icon name="key"></ion-icon>
+              </div>
+            </div>
+          </div>
+
+          <div class="submit-input">
+            <input class="btnSubmit" type="submit" value="Entrar" />
+          </div>
+        </form>
+      </div>
     </div>
-</body>
+  </body>
 </html>
